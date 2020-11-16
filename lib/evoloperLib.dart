@@ -1,5 +1,5 @@
-library evoloper_lib;
+library evoloperLib;
 
-export 'package:evoloper_lib/components/charts.dart';
-export 'package:evoloper_lib/components/colorThemes.dart';
-export 'package:evoloper_lib/services/dateFormats.dart';
+export 'package:evoloperLib/components/charts.dart';
+export 'package:evoloperLib/components/colorThemes.dart';
+export 'package:evoloperLib/services/dateFormats.dart';
