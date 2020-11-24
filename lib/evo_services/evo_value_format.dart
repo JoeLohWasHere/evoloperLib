@@ -1,8 +1,8 @@
 class EvoValueFormat{
-  String getCommaSeparatorString(dynamic stringValue){
+  String getCommaSeparatorString(dynamic dynamicValue){
     RegExp _finder = new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
     Function _mathFunc = (Match match) => '${match[1]},';
-    return stringValue.toString().replaceAllMapped(_finder, _mathFunc).toString();
+    return dynamicValue.toString().replaceAllMapped(_finder, _mathFunc).toString();
   }
 
   Map getPercentagesMap(Map mapValue){
