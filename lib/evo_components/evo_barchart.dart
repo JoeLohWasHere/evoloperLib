@@ -1,9 +1,11 @@
 import 'package:evo_lib/evo_components/evo_color.dart';
+import 'package:evo_lib/evo_services/evo_string_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_echarts/flutter_echarts.dart';
 
 class EvoBarChartTemplate extends StatelessWidget{
-  final String title, subtitle, yAxis, xAxis, data;
+  final String title, subtitle;
+  final List xAxis, yAxis, data;
   final bool isReverse, isXAxisDisplay, isDarkMode;
 
   EvoBarChartTemplate({this.title, this.subtitle, this.yAxis, this.xAxis, this.data, this.isReverse, this.isXAxisDisplay, this.isDarkMode});
@@ -40,13 +42,13 @@ class EvoBarChartTemplate extends StatelessWidget{
                           },
                           xAxis: {
                               type: '${isReverse??false ? 'category':'value'}',
-                              data: $xAxis,
+                              data: ${EvoStringFormat().getStringFromList(xAxis)},
                               offset: -6,
                               show: ${isXAxisDisplay??true}
                           },
                           yAxis: {
                               type: '${isReverse??false ? 'value':'category'}',
-                              ${isReverse??false ? '//':'data: $yAxis'},
+                              ${isReverse??false ? '//':'data: ${EvoStringFormat().getStringFromList(yAxis)}'},
                               offset: -6
                           },
                           series: [{
@@ -57,7 +59,7 @@ class EvoBarChartTemplate extends StatelessWidget{
                               //         textBorderWidth: 2
                               //     }
                               // },
-                              data: $data,
+                              data: ${EvoStringFormat().getStringFromList(data)},
                               type: 'bar',
                               showBackground: true,
                               backgroundStyle: {

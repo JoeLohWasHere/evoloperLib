@@ -6,4 +6,18 @@ class EvoStringFormat{
 
     return str;
   }
+
+  String getStringFromList(List input){
+    String _listTranslated = '["', _end = '","';
+
+    for (int i=0; i<input.length; i++){
+      if (input.length == i+1){
+        _end = '"]';
+      }
+
+      _listTranslated = _listTranslated + input[i].toString() + _end;
+    }
+
+    return _listTranslated;
+  }
 }

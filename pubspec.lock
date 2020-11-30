@@ -50,22 +50,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0-nullsafety.1"
-  firebase_messaging:
-    dependency: "direct main"
-    description:
-      name: firebase_messaging
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "6.0.16"
-  flushbar:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: master
-      resolved-ref: a259aad4c5abdd1a905ccefb6f78a838062d7168
-      url: "https://github.com/AndreHaueisen/flushbar"
-    source: git
-    version: "1.10.4"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -132,13 +116,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.2"
-  platform:
-    dependency: transitive
-    description:
-      name: platform
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.2.1"
   sky_engine:
     dependency: transitive
     description: flutter
