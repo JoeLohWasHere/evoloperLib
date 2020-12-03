@@ -9,3 +9,4 @@ export 'package:evo_lib/evo_services/evo_oauth.dart';
 export 'package:evo_lib/evo_services/evo_replacer.dart';
 export 'package:evo_lib/evo_services/evo_string_format.dart';
 export 'package:evo_lib/evo_services/evo_value_format.dart';
+export 'package:evo_lib/evo_services/evo_image_process.dart';
