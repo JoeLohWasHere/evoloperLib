@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class EvoTable extends StatelessWidget{
   final Color titleRowColor, titleFontColor, oddBarColor, contentColor;
+  final double titleFontSize, contentFontSize;
   final List<String> titleList;
   final List<List<String>> rowsList;
 
-  EvoTable({this.titleRowColor, this.titleFontColor, this.oddBarColor, this.contentColor, this.titleList, this.rowsList});
+  EvoTable({
+    this.titleRowColor, this.titleFontColor, this.oddBarColor, this.contentColor,
+    this.titleList, this.rowsList,
+    this.titleFontSize, this.contentFontSize
+  });
 
   List<TableRow> _tableRowList = [];
 
@@ -19,7 +24,15 @@ class EvoTable extends StatelessWidget{
       _columnList.add(
         Padding(
           padding: _titleEdgeInsets,
-          child: Center(child: Text(_columnTitle, style: TextStyle(color: titleFontColor??Colors.white, fontWeight: FontWeight.w800),)),
+          child: Text(
+            _columnTitle,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: titleFontColor??Colors.white,
+              fontWeight: FontWeight.w800,
+              fontSize: titleFontSize??14
+            ),
+            ),
         ),
       );
     });
@@ -41,13 +54,15 @@ class EvoTable extends StatelessWidget{
 
     return Padding(
       padding: _dataEdgeInsets,
-      child: Center(
-          child: Text(value,
-              style: TextStyle(
-                  color: contentColor??Colors.grey,
-                  fontWeight: FontWeight.w600
-              )
-      )),
+      child: Text(
+          value,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              color: contentColor??Colors.grey,
+              fontWeight: FontWeight.w600,
+              fontSize: contentFontSize??14
+          )
+      ),
     );
   }
 
@@ -89,7 +104,7 @@ class EvoTable extends StatelessWidget{
       padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
       child: Table(
         border: TableBorder(
-            horizontalInside: BorderSide(width: 1, color: Colors.grey.withOpacity(0.3), style: BorderStyle.solid),
+            // horizontalInside: BorderSide(width: 1, color: Colors.grey.withOpacity(0.3), style: BorderStyle.solid),
             verticalInside: BorderSide(width: 1, color: Colors.white.withOpacity(0.5), style: BorderStyle.solid),
             bottom: BorderSide(width: 1, color: Colors.white.withOpacity(0.5))
         ),

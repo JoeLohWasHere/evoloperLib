@@ -1,0 +1,1 @@
+export 'package:evo_lib/evo_model/evo_piechart_model.dart';
