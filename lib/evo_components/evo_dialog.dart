@@ -60,8 +60,7 @@ class CustomDialog{
     return Text(
       content,
       style: TextStyle(
-        //                fontWeight: FontWeight.bold
-        //   color: ColorThemes.fontColor
+        fontWeight: FontWeight.bold
       ),
     );
   }
@@ -70,14 +69,12 @@ class CustomDialog{
     return Container(
       decoration: BoxDecoration(
           borderRadius: new BorderRadius.circular(7),
-          // border: Border.all(color: ColorThemes.fontColor)
       ),
       child: Padding(
         padding: const EdgeInsets.all(3.0),
         child: Text(
           message,
           style: TextStyle(
-              // color: ColorThemes.fontColor,
               fontSize: 13
           ),
         ),
@@ -92,7 +89,6 @@ class CustomDialog{
         Text(
           '$title: ',
           style: TextStyle(
-              // color: ColorThemes.fontColor,
               fontSize: 13
           ),
         ),
@@ -101,14 +97,12 @@ class CustomDialog{
           width: MediaQuery.of(context).size.width - 100,
           decoration: BoxDecoration(
               borderRadius: new BorderRadius.circular(7),
-              // border: Border.all(color: ColorThemes.fontColor)
           ),
           child: Padding(
             padding: const EdgeInsets.all(3.0),
             child: Text(
               message,
               style: TextStyle(
-                  // color: ColorThemes.fontColor,
                   fontSize: 13
               ),
             ),
@@ -122,8 +116,8 @@ class CustomDialog{
     List<Widget> _allContents = [];
 
     _allContents.add(Divider(
-        // color: ColorThemes.fontColor.withOpacity(0.5))
-    ));
+        color: Colors.grey.withOpacity(0.5))
+    );
 
     switch(_noContent()){
       case false:
@@ -173,36 +167,32 @@ class CustomDialog{
       context: context,
       builder: (BuildContext context) {
         return EvoBackManager(
-          child: Theme(
-            // data: ThemeData(dialogBackgroundColor: ColorThemes.bgColor.withOpacity(0.6)),
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ],
+          child: Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
+            ),
+            child: AlertDialog(
+              title: new Text(
+                title,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold
+                ),
               ),
-              child: AlertDialog(
-                title: new Text(
-                  title,
-                  style: TextStyle(
-                      // color: ColorThemes.barAccent,
-                      fontWeight: FontWeight.bold
-                  ),
-                ),
-                content: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: _contentBuilder(),
-                ),
-                actions: buttons,
-                shape: RoundedRectangleBorder(
-                    borderRadius:BorderRadius.all(Radius.circular(20))
-                ),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: _contentBuilder(),
+              ),
+              actions: buttons,
+              shape: RoundedRectangleBorder(
+                  borderRadius:BorderRadius.all(Radius.circular(20))
               ),
             ),
           ),
