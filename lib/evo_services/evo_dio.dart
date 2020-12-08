@@ -25,9 +25,31 @@ class DioWebClient{
       }
       Response response = await dio.get(path);
       return response;
-    }catch(e){
+    }on DioError catch(e){
       print('Failed to GET: $e');
-      return null;
+      switch(e.response.statusCode){
+        case 400:
+          if(e.response.data != null){
+            return new Response(data:e.response.data,statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }else{
+            return new Response(statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }
+          break;
+        case 500:
+          if(e.response.data != null){
+            return new Response(data:e.response.data,statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }else{
+            return new Response(statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }
+          break;
+        default:
+          if(e.response.data != null){
+            return new Response(data:e.response.data,statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }else{
+            return new Response(statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }
+          break;
+      }
     }
   }
 
@@ -48,8 +70,31 @@ class DioWebClient{
         response = await dio.post(path,data: body);
       }
       return response;
-    } catch (e){
+    }on DioError catch (e){
       print('Failed to POST: $e:');
+      switch(e.response.statusCode){
+        case 400:
+          if(e.response.data != null){
+            return new Response(data:e.response.data,statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }else{
+            return new Response(statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }
+          break;
+        case 500:
+          if(e.response.data != null){
+            return new Response(data:e.response.data,statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }else{
+            return new Response(statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }
+          break;
+        default:
+          if(e.response.data != null){
+            return new Response(data:e.response.data,statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }else{
+            return new Response(statusMessage: e.error,statusCode: e.response.statusCode,headers: e.response.headers);
+          }
+          break;
+      }
     }
   }
 
