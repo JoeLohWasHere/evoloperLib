@@ -45,12 +45,12 @@ Display Widgets
 | evo_dialog | Pop-Up component |
 | evo_focus_manager | Widget focus controller |
 | evo_piechart | Pie chart component |
-| evo_table | Table componenent |
+| evo_table | Table component |
 
 # evo_services
 
 General Services 
-
+ 
 | Service | Description |
 | ------ | ------ |
 | evo_address_format | Formats lines of address |
