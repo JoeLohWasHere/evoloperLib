@@ -1,8 +1,8 @@
 name: evo_lib
-description: Evoloper Flutter Library
+description: Evoloper/Evolf Flutter Library
 version: 0.0.1
-author: Joe Loh <jlohkm@gmail.com>
-homepage: https://github.com/JoeLohWasHere/evoloperLib.git
+author: Evoloper/Evolf <management@zeoniq.com>
+homepage: http://zeoniq.com/files/index.html
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
