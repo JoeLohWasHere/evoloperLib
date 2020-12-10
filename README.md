@@ -2,13 +2,13 @@
 
 # evo_lib
 
-Evoloper/Evolf Flutter Library.
+Evoloper/Evolf Internal Flutter Library.
 
 ### Installation
 
-Install the dependencies.
+Install the dependencies in pubsepc.yaml.
 
-```dart
+```yaml
   evo_lib:
     git:
       url: https://github.com/JoeLohWasHere/evoloperLib.git
@@ -17,14 +17,20 @@ Install the dependencies.
 
 ### Importing
 
-Import the library.
-
 ```dart
 import 'package:evo_lib/evo.dart';
+
 or
+
 import 'package:evo_lib/evo_services.dart';
 import 'package:evo_lib/evo_components.dart';
 import 'package:evo_lib/evo_models.dart';
+
+or
+
+import 'package:evo_lib/evo_services/...'
+import 'package:evo_lib/evo_components/...'
+import 'package:evo_lib/evo_models/...'
 ```
 
 # evo_components
@@ -48,8 +54,23 @@ General Services
 | Service | Description |
 | ------ | ------ |
 | evo_address_format | Formats lines of address |
+| evo_alice_interceptor | API inspector/debugger |
+| evo_date_range |  Date ranges |
+| evo_datetime_format | Formats general date/time |
+| evo_dio | API firing and interceptor |
+| evo_firebase_messaging_config | Configure general firebase notifications |
+| evo_http | API firing |
+| evo_image_process | Encodes and decodes images to/from base-64 String |
+| evo_map_list_format | Converts Lists to Map, vice versa |
+| evo_oauth | Configure oAuth and provide uri |
+| evo_replacer | Replacing value within String |
+| evo_string_format | Formats String values |
+| evo_value_format | Formats numeric values |
 
-### Todos
+# evo_models
 
- - Adding more components/services
+General Models 
 
+| Model | Description |
+| ------ | ------ |
+| evo_piechart_model | Pie chart data structure |
