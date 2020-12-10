@@ -3,12 +3,12 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'evo_alice_interceptor.dart';
 
-class DioWebClient{
+class EvoDio{
   Dio dio;
   bool MOCK = false;
 
 
-  DioWebClient({String baseUrl}){
+  EvoDio({String baseUrl}){
     dio = new Dio();
     dio.options.baseUrl = baseUrl;
   }

@@ -18,6 +18,8 @@ dependencies:
   alice: ^0.1.5
   cupertino_icons: ^1.0.0
   dio: ^3.0.10
+  path_provider: ^1.6.5
+  downloads_path_provider_28: ^0.1.0
 #  firebase_messaging: ^6.0.16
 #  flushbar:
 #    git:
