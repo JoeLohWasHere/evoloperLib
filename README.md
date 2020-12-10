@@ -28,9 +28,9 @@ import 'package:evo_lib/evo_models.dart';
 
 or
 
-import 'package:evo_lib/evo_services/...'
-import 'package:evo_lib/evo_components/...'
-import 'package:evo_lib/evo_models/...'
+import 'package:evo_lib/evo_services/...';
+import 'package:evo_lib/evo_components/...';
+import 'package:evo_lib/evo_models/...';
 ```
 
 # evo_components
