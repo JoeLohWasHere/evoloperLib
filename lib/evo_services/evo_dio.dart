@@ -13,8 +13,11 @@ class DioWebClient{
     dio.options.baseUrl = baseUrl;
   }
 
-  Future<Response> getAPI({Map<String,dynamic> headers,String path}) async{
+  Future<Response> getAPI({Map<String,dynamic> headers,String path,String baseUrl = ""}) async{
     try{
+      if(baseUrl != ""){
+        dio.options.baseUrl = baseUrl;
+      }
       dio.options.headers =headers;
       dio.options.contentType = "application/json";
       if(DEBUG_MODE){
@@ -53,9 +56,12 @@ class DioWebClient{
     }
   }
 
-  Future<Response> postAPI({Map<String,dynamic> headers,String path,String body}) async {
+  Future<Response> postAPI({Map<String,dynamic> headers,String path,String body,String baseUrl = ""}) async {
     try {
       Response response;
+      if(baseUrl != ""){
+        dio.options.baseUrl = baseUrl;
+      }
       dio.options.headers =headers;
       dio.options.contentType = "application/json";
       if(DEBUG_MODE){
