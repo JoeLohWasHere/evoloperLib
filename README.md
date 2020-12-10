@@ -6,7 +6,7 @@ Evoloper/Evolf Internal Flutter Library.
 
 ### Installation
 
-Install the dependencies in pubspec.yaml.
+Install the dependency in pubspec.yaml.
 
 ```yaml
   evo_lib:
