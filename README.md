@@ -2,13 +2,13 @@
 
 # evo_lib
 
-Evoloper/Evolf Internal Flutter Library.
+Evoloper/Evolf Internal Flutter Library
 
 ### Installation
 
-Install the dependency in pubspec.yaml.
+Install the dependencies in pubsepc.yaml
 
-```yaml
+```dart
   evo_lib:
     git:
       url: https://github.com/JoeLohWasHere/evoloperLib.git
@@ -28,12 +28,12 @@ import 'package:evo_lib/evo_models.dart';
 
 or
 
-import 'package:evo_lib/evo_services/...';
-import 'package:evo_lib/evo_components/...';
-import 'package:evo_lib/evo_models/...';
+import 'package:evo_lib/evo_services/...'
+import 'package:evo_lib/evo_components/...'
+import 'package:evo_lib/evo_models/...'
 ```
 
-# evo_components
+### evo_components
 
 Display Widgets
 
@@ -45,12 +45,12 @@ Display Widgets
 | evo_dialog | Pop-Up component |
 | evo_focus_manager | Widget focus controller |
 | evo_piechart | Pie chart component |
-| evo_table | Table component |
+| evo_table | Table componenent |
 
-# evo_services
+### evo_services
 
 General Services 
- 
+
 | Service | Description |
 | ------ | ------ |
 | evo_address_format | Formats lines of address |
@@ -67,10 +67,86 @@ General Services
 | evo_string_format | Formats String values |
 | evo_value_format | Formats numeric values |
 
-# evo_models
+### evo_models
 
 General Models 
 
 | Model | Description |
 | ------ | ------ |
 | evo_piechart_model | Pie chart data structure |
+
+## Examples
+### evo_components
+
+evo_back_manager
+```dart
+Scaffold(
+      body: BackMod(
+        child: ...
+      )
+)
+```
+evo_barchart
+```dart
+EvoBarChartTemplate(
+    title: 'Test Bar Chart',
+    subtitle: 'Test',
+    xAxis: ['A', 'B', 'C'],
+    data: ['10', '20', '30'],
+    isReverse: true,
+    isXAxisDisplay: true,
+    isDarkMode: true,
+)
+```
+
+evo_focus_manager
+```dart
+EvoFocusManager(
+    child: Scaffold(
+        body: ...
+    )
+)
+```
+
+evo_table
+```dart
+EvoTable(
+    titleFontColor: Colors.white,
+    titleRowColor: Colors.black,
+    oddBarColor: Colors.black.withOpacity(0.5),
+    contentColor: Colors.grey,
+    titleFontSize: 14,
+    titleList: ['Parent', 'Child', 'Total'],
+    rowsList: [
+      ['A', 'B', '100'],
+      ['C', 'D', '200'],
+      ['E', 'F', '300'],
+    ],
+)
+```
+
+### evo_services
+
+evo_map_list_format
+```dart
+//Map to Lists
+Map<String, String> apple = {'apple': '90%', 'orange': '50%'};
+
+MapListFormat convertedFormat = MapListFormat(inputMap: apple);
+
+convertedFormat.getListFromMap();
+
+List<String> fruit =  convertedFormat.outputTitleList;
+List<String> sweetness = convertedFormat.outputContentList;
+```
+```dart
+//Lists to Map
+List<String> fruit = ['apple', 'orange'];
+List<String> sweetness = ['90%', '80%'];
+
+MapListFormat convertedFormat = MapListFormat(inputTitleList: fruit, inputContentList: sweetness);
+
+convertedFormat.getMapFromLists();
+
+Map<String, String> apple = convertedFormat.outputMap;
+```
