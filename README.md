@@ -150,3 +150,30 @@ convertedFormat.getMapFromLists();
 
 Map<String, String> apple = convertedFormat.outputMap;
 ```
+
+evo_download_service
+```dart
+//create download onReceiveService
+
+//before start please import DioDownloadClient
+  void _onReceiveProgress(int received, int total) {
+    if (total != -1) {
+      setState(() {
+        _progress = (received / total * 100).toStringAsFixed(0) + "%";
+      });
+    }
+  }
+
+//create download function
+  Future<void> download() async{
+    result = await DioDownloadClient.instance.downloadFile(
+      downloadUrl: "http://lot.services/blog/files/DSCF0277.jpg",
+      savedFileName: "MyPet.jpg",
+      onReceiveProgress: _onReceiveProgress,
+    );
+  }
+
+
+//download example
+
+```
